@@ -1,0 +1,82 @@
+
+
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>PRICE PREDICTION </title>
+</head>
+<form action="{{ url_for('predict')}}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        cloud :
+        <input name="cloud" type="number" required>
+        <br>
+         furniture:
+         <input name="furniture" type="number" required>
+         <br>
+          equipment:
+          <input name="equipment" type="number" required>
+          <br>
+           sofftware:
+           <input name="software" type="number" required>
+           <br>
+            salary_hr:
+            <input name="salary_hr" type="number" required>
+            <br> 
+            length:
+             <input name="length" type="number" required>
+             <br> 
+             study_material_cost:
+              <input name="study_material_cost" type="number" required>
+              <br> 
+              rent:
+               <input name="rent" type="number" required>
+               <br>
+                electricity:
+                <input name="electricity" type="number" required>
+                <br>
+                 maintainance:
+                 <input name="maintainance" type="number" required>
+                 <br>
+                  marketing:
+                  <input name="marketing" type="number" required>
+                  <br>
+        <br> certification:
+        <input name="certification" type="number" required>
+        <br>
+        <br> placement:
+        <input name="placement" type="number" required>
+        <br>
+        <br>
+        <button  type="submit">Predict</button>
+    </fieldset>
+</form>
+<br>
+
+<h1>{{prediction_text}}</h1>
+<!--
+<div class="result" align="center">
+    {% if result %}
+    	{% for variable, value in original_input.items() %}
+    		<b>{{ variable }}</b> : {{ value }}
+    	{% endfor %}
+		<br>
+    	<br> Price:
+   		<p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>-->
+
+</html>
