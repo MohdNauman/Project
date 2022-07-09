@@ -12,8 +12,7 @@ model = pickle.load(open('model3.pkl', 'rb'))
 def home():
     return render_template('index.html')
 
-@app.route('/predict'):
-    if request.method =='POST':
+@app.route('/predict', methods=["POST")
 def predict():
     
     int_features = [int(x) for x in request.form.values()]
